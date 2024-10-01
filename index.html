@@ -27,7 +27,7 @@
             const totalConDescuento = valorFactura - descuentoMora;
 
             // Mostrar los resultados con formato de miles y decimales con puntos y comas
-            document.getElementById('resultadoDescuento').textContent = 'Descuento Mora (20%): $' + descuentoMora.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('resultadoDescuento').textContent = 'Descuento Mora (80%): $' + descuentoMora.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             document.getElementById('resultadoTotal').textContent = 'Total con Descuento: $' + totalConDescuento.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
     </script>
@@ -46,7 +46,7 @@
     <button onclick="calcularTotal()">Calcular</button>
 
     <h2>Resultados</h2>
-    <p id="resultadoDescuento">Descuento Mora (20%): $0,00</p>
+    <p id="resultadoDescuento">Descuento Mora (80%): $0,00</p>
     <h1 id="resultadoTotal">Total con Descuento: $0,00</h1>
 </body>
 </html>
