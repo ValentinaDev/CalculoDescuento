@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Descuento y Total</title>
+    
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function calcularTotal() {
+            // Obtener los valores ingresados
+            const valorFactura = parseFloat(document.getElementById('valorFactura').value);
+            const valorMora = parseFloat(document.getElementById('valorMora').value);
+
+            // Validar si los valores son números
+            if (isNaN(valorFactura) || isNaN(valorMora)) {
+                alert('Por favor, ingresa valores numéricos válidos.');
+                return;
+            }
+
+            // Calcular el descuento (valor mora * 0.80)
+            const descuentoMora = valorMora * 0.80;
+
+            // Calcular el total restando el descuento de mora del valor factura
+            const totalConDescuento = valorFactura - descuentoMora;
+
+            // Mostrar los resultados con formato de miles y decimales con puntos y comas
+            document.getElementById('resultadoDescuento').textContent = 'Descuento Mora (20%): $' + descuentoMora.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('resultadoTotal').textContent = 'Total con Descuento: $' + totalConDescuento.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo de Descuento y Total</h1>
+
+    <h4 class="advice">RECUERDA INGRESAR LOS DATOS SIN PUNTOS NI COMA</h4>
+
+    <label for="valorFactura">Valor Total Factura sin Alivio:</label>
+    <input type="number" id="valorFactura" step="0.01" placeholder="Ingresa el valor factura"><br><br>
+
+    <label for="valorMora">Valor Mora sin Alivio:</label>
+    <input type="number" id="valorMora" step="0.01" placeholder="Ingresa el valor mora"><br><br>
+
+    <button onclick="calcularTotal()">Calcular</button>
+
+    <h2>Resultados</h2>
+    <p id="resultadoDescuento">Descuento Mora (20%): $0,00</p>
+    <h1 id="resultadoTotal">Total con Descuento: $0,00</h1>
+</body>
+</html>
